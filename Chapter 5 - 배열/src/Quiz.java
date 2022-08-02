@@ -143,5 +143,73 @@ class Quiz8 {
 }
 
 class Quiz9 {
-    // 5-9 
+    // 5-9 주어진 배열을 시계방향으로 회전하기
+    public static void main(String[] args) {
+        char[][] stars = {
+            {'*','*',' ', ' ', ' '},
+            {'*','*',' ', ' ', ' '},
+            {'*','*','*', '*', '*'},
+            {'*','*','*', '*', '*'},
+            {'*','*','*', '*', '*'},
+        };
+
+        char[][] result = new char[stars[0].length][stars.length];
+
+        for (int i=0; i<stars.length; i++) {
+            for (int j=0; j<stars[0].length; j++) {
+                System.out.print(stars[i][j]);
+            }
+            System.out.println();
+        }
+
+        System.out.println();
+
+        for (int i=0; i<stars.length; i++) {
+            for (int j=0; j<stars[0].length; j++) {
+                int x = j;
+                int y = stars.length-1-i;
+                result[x][y] = stars[i][j];
+            }
+        }
+
+        for (int i=0; i<stars.length; i++) {
+            for (int j=0; j<stars[0].length; j++) {
+                System.out.print(result[i][j]);
+            }
+            System.out.println();
+        }
+    }
+}
+
+// Quiz 10하기 
+class Quiz11 {
+    // 5-10 배열 한칸 늘려서 총합 넣기
+    public static void main(String[] args) {
+        int [][] score = {
+            {100, 100, 100},
+            {20, 20, 20},
+            {30, 30, 30},
+            {40, 40, 40},
+            {50, 50, 50}
+        };
+
+        // 기존 배열보다 가로 세로 한칸 더 큰 배열 생성
+        int [][] result = new int[score.length+1][score[0].length+1];
+
+        for (int i=0; i<score.length; i++) {
+            for (int j=0; j<score[0].length; j++) {
+                result[i][j] = score[i][j]; // 기존 숫자들 넣기
+                result[i][score[0].length] += score[i][j]; // result 배열의 끝 숫자는 각 숫자 더한 값
+                result[score.length][j] += score[i][j]; // result배열의 마지막 줄은 각 숫자 더한 값
+                result[score.length][score[0].length] += result[i][j]; // 오른쪽 구석 값은 모든 모든 result값 더함
+            }
+        }
+
+        for (int i=0; i<result.length; i++) {
+            for (int j=0; j<result[0].length; j++) {
+                System.out.printf("%d ", result[i][j]);
+            }
+            System.out.println();
+        }
+    }
 }

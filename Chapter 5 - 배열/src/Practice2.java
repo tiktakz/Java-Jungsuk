@@ -126,7 +126,7 @@ class MultiArrEx3 {
             {"computer", "컴퓨터"},
             {"integer", "정수"},
         };
-
+        int points = 0;
         Scanner scanner = new Scanner(System.in);
 
         for (int i=0; i<words.length; i++) {
@@ -135,9 +135,11 @@ class MultiArrEx3 {
 
             if (tmp.equals(words[i][1])) {
                 System.out.printf("정답입니다.%n%n");
+                points +=1;
             } else {
                 System.out.printf("틀렸습니다. 정답은 %s %n%n", words[i][1]);
             }
         }
+        System.out.printf("총 맞춘 정답은 %d개 중 %d개 입니다", words.length, points);
     }
 }
