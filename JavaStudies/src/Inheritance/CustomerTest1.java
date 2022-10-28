@@ -26,5 +26,8 @@ public class CustomerTest1 {
         System.out.println(customerWho.showCustomerInfo());
         //500
         // Customer타입 이지만 VIPCustomer으로 생성되며, 그 클래스의 메소드가 호출됨
+
+        Customer customerGold = new GoldCustomer();
+        
     }
 }

@@ -9,11 +9,11 @@ public class Customer {
     protected int bonusPoint;
     protected double bonusRatio;
 
-    /*public Customer() {
+    public Customer() {
         customerGrade = "SILVER";
         bonusRatio = 0.01;
     }
-    */
+    
     
     public Customer(int customerID, String customerName) {
         this.customerID = customerID;
